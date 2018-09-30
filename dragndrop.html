@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Drag and drop</title>
+    <style>
+      html,body {
+        padding: 10px;
+        margin: 0;
+        font-size: 20px;
+      }
+
+      article, article figure {
+        border: 3px solid blue;
+        padding: 10px;
+        margin: 0;
+        min-height: 20px;
+      }
+
+      article * {
+        border: 2px solid red;
+        margin: 10px 0;
+      }
+
+      .ghost {
+        border: 2px dashed #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <h1>Header</h1>
+      <p class="lead">Release1</p>
+      <p>Release2</p>
+      <p>Release3</p>
+      <p>Release4</p>
+      <p>Release5</p>
+      <p>Release6</p>
+      <p>Release7</p>
+      <figure>
+        <img src="Defense.jpg" alt="Larger release box" width="400" height="250" />
+        <figcaption>Larger release box</figcaption>
+      </figure>
+    </article>
+    <script src="dragndrop.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      var dragObj = dragAndDrop();
+      dragObj.init('article');
+    </script>
+  </body>
+</html>
