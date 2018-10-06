@@ -34,10 +34,24 @@ function dragAndDrop() {
   function dropHandle(e) {
     var elementId = e.dataTransfer.getData("elementId");
     var draggedElement = document.querySelector('[data-drag-id="' + elementId + '"]');
+    console.log("dropping")
     if(ghostElement.parentNode) {
       ghostElement.parentNode.insertBefore(draggedElement, ghostElement);
     }
     e.preventDefault();
+    var positions = [];
+    const art2 = document.querySelectorAll("[data-drag-id]");
+    for (var i = 0; i < art2.length; i++) {
+      //Currently, data-drag-id #1 is the header, so we will ignore that 
+      // and subtract one from all ids for our array.  
+      if (art2[i].getAttribute("data-drag-id")!=1) {
+        positions.push(art2[i].getAttribute("data-drag-id")-1)
+        //console.log(art2[i].getAttribute("data-drag-id"));
+        console.log(positions)
+      }
+    }
+
+    
   }
 
   function dragEndHandle(e) {
