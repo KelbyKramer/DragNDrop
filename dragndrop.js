@@ -32,6 +32,7 @@ function dragAndDrop() {
   }
 
   function dropHandle(e) {
+    var positions = [];
     var elementId = e.dataTransfer.getData("elementId");
     var draggedElement = document.querySelector('[data-drag-id="' + elementId + '"]');
     console.log("dropping")
@@ -39,11 +40,13 @@ function dragAndDrop() {
       ghostElement.parentNode.insertBefore(draggedElement, ghostElement);
     }
     e.preventDefault();
-    var positions = [];
+    
     const art2 = document.querySelectorAll("[data-drag-id]");
     for (var i = 0; i < art2.length; i++) {
       //Currently, data-drag-id #1 is the header, so we will ignore that 
-      // and subtract one from all ids for our array.  
+      // and subtract one from all ids for our array.
+      //furthermore 10 and 9 are rally one item- the "Larger Release box"
+      //   ignoring that for now since may not be
       if (art2[i].getAttribute("data-drag-id")!=1) {
         positions.push(art2[i].getAttribute("data-drag-id")-1)
         //console.log(art2[i].getAttribute("data-drag-id"));
