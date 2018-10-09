@@ -41,18 +41,19 @@ function dragAndDrop() {
     }
     e.preventDefault();
     
-    const art2 = document.querySelectorAll("[data-drag-id]");
+    //const art2 = document.querySelectorAll("[data-drag-id]");
+    const art2 = document.querySelectorAll("#data-drag-id , p");
     for (var i = 0; i < art2.length; i++) {
       //Currently, data-drag-id #1 is the header, so we will ignore that 
       // and subtract one from all ids for our array.
       //furthermore 10 and 9 are rally one item- the "Larger Release box"
       //   ignoring that for now since may not be
-      if (art2[i].getAttribute("data-drag-id")!=1) {
-        positions.push(art2[i].getAttribute("data-drag-id")-1)
+      positions.push(art2[i].getAttribute("data-drag-id")-1)
         //console.log(art2[i].getAttribute("data-drag-id"));
-        console.log(positions)
-      }
+        
+      
     }
+    console.log(positions)
 
     
   }
