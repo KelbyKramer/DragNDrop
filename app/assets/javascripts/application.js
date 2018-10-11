@@ -23,5 +23,7 @@ function myFunction2() {
 
  function increment_position(data) {
     //alert("Hello!");
-    console.log(data[1]['info'])
+    console.log(data[1]['postion']);
+    data[1]['postion'] +=1;
+    console.log(data[1]['postion']);
  }
