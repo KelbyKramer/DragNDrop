@@ -14,3 +14,14 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+
+function myFunction2() {
+    fruits.pop();
+    document.getElementById("demo").innerHTML = fruits;
+}
+
+ function increment_position(data) {
+    //alert("Hello!");
+    console.log(data[1]['info'])
+ }

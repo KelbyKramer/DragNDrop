@@ -1,4 +1,8 @@
+<script src="/app/assets/javascripts/tasks.js"></script>
+
 <p id="notice"><%= notice %></p>
+
+
 
 <h1>Tasks</h1>
 
@@ -38,10 +42,29 @@
 
 <%= link_to 'New Task', new_task_path %>
 <br>
+<br>
 <%= @tasks %>
 <br>
+
 <br>
-<% @tasks[0][:postion] = 99 %>
-<%= @tasks[0][:postion] %>
+
+<p>Click the button to remove the last element from the array.</p>
+
+<button onclick="myFunction2()">Try it</button>
+
+<p id="demo"></p>
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
 
 
+</script>
+
+<%= javascript_tag do %>
+  
+  dataForJs = <%= raw @tasks.to_json %>
+<% end %>
+
+
+
+<button onclick="increment_position(dataForJs)">Increment position</button>
